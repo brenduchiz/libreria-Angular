@@ -1,0 +1,17 @@
+.card-container{
+    display:grid;
+    margin-top: 90px;
+    gap: 2rem;
+    
+    grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
+  
+}
+
+.button-color-card {
+    background-color: #12f848 ;
+}
+
+
+mat-card{
+    background: #db79c6 ;
+}
