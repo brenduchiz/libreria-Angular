@@ -1,32 +1,40 @@
-
-<form [formGroup]="loginForm" (submit)="login()">
-    <mat-card class="text-center mt-3" fxLayoutAlign="center center"> 
+<div class="container mt-3">
+    <mat-toolbar   style="background-color: #4cff75;">
+        <span> Library </span> 
        
-    <div>
-        <mat-form-field class="example-form-field" appearance="fill">    
-            <mat-label>E-mail</mat-label>
-            <input matInput  formControlName="email" placeholder="email" type="email" >
-            <mat-error *ngIf="loginForm.controls['email'].hasError('email') || false " >
-                No es un correo válido
-            </mat-error>
-            <mat-error *ngIf="loginForm.controls['email'].hasError('required') || false " >
-                Email es requerido
-            </mat-error>
-        </mat-form-field>
-    </div>
-    <div>
-        <mat-form-field class="example-form-field" appearance="fill">
-            <mat-label>Password</mat-label>
-            <input matInput  type="password" formControlName="password" placeholder="contraseña">
-            <mat-error *ngIf="loginForm.controls['password'].errors" >
-                La contraseña no es valida
-            </mat-error>
-          </mat-form-field>
-    </div>
-    <div class="mx-auto">
-    <button class="btn button-color-card mt-4  btn-lg" >
-        Log in
-  </button>
-    </div>
-</mat-card>
-</form>
+      </mat-toolbar>
+    <form [formGroup]="loginForm" (submit)="login()">
+        <mat-card class="text-center mt-3" fxLayoutAlign="center center"> 
+           
+        <div>
+            <mat-form-field class="example-form-field" appearance="fill">    
+                <mat-label>E-mail</mat-label>
+                <input matInput  formControlName="email" placeholder="email" type="email" >
+                <mat-error *ngIf="loginForm.controls['email'].hasError('email') || false " >
+                    No es un correo válido
+                </mat-error>
+                <mat-error *ngIf="loginForm.controls['email'].hasError('required') || false " >
+                    Email es requerido
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput  type="password" formControlName="password" placeholder="contraseña">
+                <mat-error *ngIf="loginForm.controls['password'].errors" >
+                    La contraseña no es valida
+                </mat-error>
+              </mat-form-field>
+        </div>
+        <div class="mx-auto">
+        <button class="btn button-color-card mt-4  btn-lg" >
+            Log in
+      </button>
+        </div>
+    </mat-card>
+    </form>
+    
+</div>
+ 
+ 

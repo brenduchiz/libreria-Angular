@@ -1,0 +1,19 @@
+table {
+    width: 100%;
+  }
+
+  th{
+    width: 20%;
+  }
+
+  .pointer{
+    cursor: pointer;
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  ::ng-deep .green-snack-bar{
+    background: #3f51b5;
+  }

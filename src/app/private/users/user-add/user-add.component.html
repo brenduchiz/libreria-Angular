@@ -1,0 +1,84 @@
+
+<div class="container mt-3">
+    <mat-toolbar  style="background-color: #4cff75;">
+        <span> Add New User </span> 
+       
+      </mat-toolbar>
+    
+    <form [formGroup]="addForm" (submit)="addUser()">
+        <mat-card class="text-center mt-3" fxLayoutAlign="center center"> 
+           
+        <div>
+            <mat-form-field  appearance="fill">    
+                <mat-label>Name</mat-label>
+                <input matInput  formControlName="name" placeholder="Name" type="name" >
+                <mat-error *ngIf="addForm.controls.name.errors?.['required'] " >
+                  Es un campo requerido
+              </mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field  appearance="fill">
+                <mat-label>Second Name</mat-label>
+                <input matInput  type="secondLastName" formControlName="secondLastName" placeholder="Second Name">
+                <mat-error *ngIf="addForm.controls.secondLastName.errors?.['required'] " >
+                  Es un campo requerido
+              </mat-error>
+              </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field  appearance="fill">
+                <mat-label>Last Name</mat-label>
+                <input matInput  type="lastName" formControlName="lastName" placeholder="Last Name">
+                <mat-error *ngIf="addForm.controls.lastName.errors?.['required'] " >
+                  Es un campo requerido
+              </mat-error>
+              </mat-form-field>
+        </div>
+        <div>
+        <mat-form-field appearance="fill">
+                <mat-label>Roles</mat-label>
+                <mat-select  formControlName="roleId">
+                  <mat-option *ngFor="let role of roles" [value]="role.id">
+                    {{role.name}}
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="addForm.controls.roleId.errors?.['required'] " >
+                  Es un campo requerido
+              </mat-error>
+              </mat-form-field> 
+        </div> 
+        <div>
+            <mat-form-field  appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput  type="email" formControlName="email" placeholder="email">
+                <mat-error *ngIf="addForm.controls['email'].hasError('email') || false " >
+                  No es un correo válido
+              </mat-error>
+              <mat-error *ngIf="addForm.controls['email'].hasError('required') || false " >
+                  Email es requerido
+              </mat-error>
+              </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field  appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput  type="password" formControlName="password" placeholder="password">
+                <mat-error *ngIf="addForm.controls['password'].errors" >
+                  La contraseña no es valida
+              </mat-error>
+              </mat-form-field>
+        </div>
+        <div class="mx-auto">
+            <button mat-raised-button color="primary"
+            [disabled]="!addForm.valid || loading==true" 
+            >
+              <mat-spinner [diameter]="20" *ngIf="loading" class="spiner"></mat-spinner>
+              Add User
+            </button>
+        </div>
+    </mat-card>
+    </form>
+    
+    
+</div>
